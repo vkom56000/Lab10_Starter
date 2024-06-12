@@ -3,11 +3,21 @@
 
 <head>
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-N392W88D');</script>
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-N392W88D');
+  </script>
   <!-- End Google Tag Manager -->
 
   <meta charset="UTF-8" />
@@ -24,19 +34,19 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QKK358NJ5B"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag() { dataLayer.push(arguments); }
   gtag('js', new Date());
 
   gtag('config', 'G-QKK358NJ5B');
 </script>
 <body>
   <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N392W88D"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N392W88D"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <header>
     <nav>
-      <a href="index.html" title="Go to  party horn">Party Horn</a>
+      <a href="index.html" title="Go to party horn">Party Horn</a>
     </nav>
   </header>
   <main>
@@ -49,9 +59,22 @@
       <select name="voice" id="voice-select">
         <option value="select" disabled selected>Select Voice:</option>
       </select>
+      <div id="volume-controls">
+        <input type="range" name="volume" id="volume" value="50" min="0" max="100" step="1" />
+        <img src="assets/icons/volume-level-2.svg" alt="Volume level 2" />
+      </div>
       <button>Press to Talk</button>
     </section>
   </main>
-</body>
 
-</html>
+  <script>
+    // Generate a random number between 0 and 1
+    const randomNumber = Math.random();
+    // Determine if the volume controls should be applied
+    const shouldShowVolumeControl = randomNumber < 0.5;
+    // Get the volume controls element
+    let volumeControls = document.querySelector('#volume-controls');
+    // Apply or remove the volume controls based on the random number
+    if (!shouldShowVolumeControl) {
+      volumeControls.style.display = 'none';
+    }
