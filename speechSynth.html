@@ -69,6 +69,19 @@
 
   <script>
     // Generate a random number between 0 and 1
+    const randomNumbers = Math.random();
+    // Determine if the class should be applied
+    const shouldApplyClass = randomNumbers < 0.5;
+    // Get the body element
+    let body = document.querySelector('body');
+    // Apply or remove the "blue" class based on the random number
+    if (shouldApplyClass) {
+         body.classList.add('blue');
+    }
+</script>
+
+  <script>
+    // Generate a random number between 0 and 1
     const randomNumber = Math.random();
     // Determine if the volume controls should be applied
     const shouldShowVolumeControl = randomNumber < 0.5;
@@ -78,3 +91,5 @@
     if (!shouldShowVolumeControl) {
       volumeControls.style.display = 'none';
     }
+
+    
